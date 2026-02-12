@@ -1,11 +1,11 @@
-
-
 > ## ⚠️ IMPORTANT DISCLAIMER
->
+> 
 > **This project was created purely for fun and educational purposes!**
->
+> 
 > This is NOT a trading platform. This is NOT financial advice. Please DO NOT attempt to trade or gamble through this application. It's a demonstration of how prediction market APIs can be gamified into an entertaining slot machine experience.
->
+> 
+> **⚠️ PLEASE USE DEMO MODE ONLY! DO NOT connect real API keys or trade with real money.**
+> 
 > **Use at your own risk. Entertainment only.** 🎰
 
 
@@ -40,46 +40,23 @@
 
 [🚀 Quick Start](#-quick-start) • [🤝 Contributing](#-contributing)
 
----
-
-<!-- MAIN SCREENSHOT -->
-<img src="./assets/preview_main.png" alt="Polynanza Crush Game Screenshot" width="800"/>
-
 </div>
 
 ---
 
 ## 🌟 What is PolyNanza?
-
 **PolyNanza** is a candy-themed slot machine that transforms Polymarket prediction markets into a fun, interactive game! Spin adorable gummy bears and candy symbols while real-time market data determines your outcomes.
 
-### 🔌 How It Works
+**🎮 Play with virtual balance** - The game includes a demo mode with fake money for safe entertainment. While there's API functionality for real market data, **we strongly discourage using it** - stick to demo mode for fun without risk!
 
-The slot machine connects to Polymarket's API to fetch live prediction market data (BTC price predictions). 
+---
 
-1. **You click SPIN** → The game checks current market prices
-2. **Places a bet** → Buys a position at current market price for your bet amount
-3. **Waits for Bet Duration** → Holds the position for the configured time period
-4. **Sells the position** → Closes the bet and calculates your profit/loss
-5. **Animation plays** → Shows your winning (or losing) combination based on the result!
+<!-- MAIN SCREENSHOT -->
+<img src="./assets/preview_main.png" alt="Polynanza Crush Game Screenshot" width="800"/>
 
-The real market odds influence your slot results, making it more than just random chance - it's tied to actual prediction markets!
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant SlotMachine
-    participant GameOrchestrator
-    participant PolymarketAPI
-    
-    User->>SlotMachine: Click SPIN
-    SlotMachine->>GameOrchestrator: Request Spin
-    GameOrchestrator->>PolymarketAPI: Fetch Market Odds
-    PolymarketAPI-->>GameOrchestrator: Return Probabilities
-    GameOrchestrator->>GameOrchestrator: Calculate Outcomes
-    GameOrchestrator-->>SlotMachine: Return Spin Result
-    SlotMachine->>User: Display Animation
-```
+
+
 ---
 
 ## 📸 Screenshots
@@ -102,6 +79,64 @@ sequenceDiagram
 </div>
 
 </details>
+
+## 🔌 How It Works
+
+The slot machine connects to Polymarket's API and actually trades on live prediction markets (like BTC price predictions). Here's what happens when you spin:
+
+1. **You click SPIN** → Game fetches current market price
+2. **Opens a position** → Buys at current market price for your bet amount  
+3. **Holds for Bet Duration** → Position stays open for the configured time period
+4. **Closes the position** → Sells and calculates profit/loss based on price movement
+5. **Animation plays** → Shows winning or losing symbols based on your actual trade result!
+
+Your wins and losses are based on real market price movements - not random number generation. If the market moves in your direction, you win!
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    participant GameOrchestrator
+    participant BetService
+    participant PolymarketRepo
+    participant PolymarketAPI
+    
+    User->>App: Click SPIN
+    App->>GameOrchestrator: spin(amount, options)
+    GameOrchestrator->>GameOrchestrator: State: placing-bet
+    GameOrchestrator->>BetService: placeBet(config)
+    BetService->>PolymarketRepo: getCurrentMarket()
+    PolymarketRepo->>PolymarketAPI: Fetch market data
+    PolymarketAPI-->>PolymarketRepo: Market info + odds
+    PolymarketRepo->>PolymarketRepo: getCurrentMarketData()
+    PolymarketRepo->>PolymarketAPI: Get current price
+    PolymarketAPI-->>PolymarketRepo: Current price
+    PolymarketRepo-->>BetService: Bet placed (entry price saved)
+    BetService-->>GameOrchestrator: Bet confirmed
+    
+    GameOrchestrator->>GameOrchestrator: State: spinning
+    GameOrchestrator->>GameOrchestrator: Delay (animation)
+    GameOrchestrator->>GameOrchestrator: State: waiting
+    GameOrchestrator->>GameOrchestrator: Wait for holdTimeSeconds
+    
+    GameOrchestrator->>GameOrchestrator: State: resolving
+    GameOrchestrator->>BetService: resolveBet(betId)
+    BetService->>PolymarketRepo: resolveBet(betId)
+    PolymarketRepo->>PolymarketAPI: Get current price (exit)
+    PolymarketAPI-->>PolymarketRepo: Exit price
+    PolymarketRepo->>PolymarketRepo: Calculate: exitPrice - entryPrice
+    PolymarketRepo->>PolymarketRepo: Determine win/loss
+    PolymarketRepo->>PolymarketRepo: Calculate payout
+    PolymarketRepo-->>BetService: Resolution (won, payout, priceChange)
+    BetService->>BetService: Update balance
+    BetService-->>GameOrchestrator: BetResolution
+    
+    GameOrchestrator->>SlotMachineService: generateSpinResult(resolution)
+    SlotMachineService-->>GameOrchestrator: SpinResult (symbols, winAmount)
+    GameOrchestrator->>GameOrchestrator: State: showing-result
+    GameOrchestrator-->>App: onComplete(spinResult)
+    App->>User: Display animation & result
+```
 
 ---
 
