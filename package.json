@@ -1,10 +1,29 @@
 {
-  "name": "polymarket-slot-meme",
+  "name": "polynanza-crush",
   "version": "1.0.0",
-  "description": "Meme slot using Polymarket API for predictions",
+  "description": "A candy-themed slot machine powered by Polymarket prediction markets!",
+  "author": "isnotcursed",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "type": "module",
+  "keywords": [
+    "polymarket",
+    "slot-machine",
+    "prediction-markets",
+    "educational",
+    "entertainment",
+    "typescript",
+    "react",
+    "bun"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isnotcursed/polymarket-casino-slot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isnotcursed/polymarket-casino-slot/issues"
+  },
+  "homepage": "https://github.com/isnotcursed/polymarket-casino-slot#readme",
   "scripts": {
     "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 bun --hot src/index.ts",
     "api": "NODE_TLS_REJECT_UNAUTHORIZED=0 bun --hot src/api-server.ts",
@@ -28,5 +47,9 @@
     "sass": "^1.97.3",
     "typescript": "^5.0.2",
     "vite": "^5.0.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
   }
 }

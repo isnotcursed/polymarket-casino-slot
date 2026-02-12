@@ -1,4 +1,4 @@
-<div align="center">
+
 
 > ## ⚠️ IMPORTANT DISCLAIMER
 >
@@ -6,9 +6,9 @@
 >
 > This is NOT a trading platform. This is NOT financial advice. Please DO NOT attempt to trade or gamble through this application. It's a demonstration of how prediction market APIs can be gamified into an entertaining slot machine experience.
 >
-> **Use at your own risk. No real money trading. Entertainment only.** 🎰
+> **Use at your own risk. Entertainment only.** 🎰
 
-</div>
+
 
 ---
 
@@ -21,7 +21,6 @@
   />
 
 # PolyNanza! 🍭
-### *Where Candy Meets Crypto Predictions*
 
 
 [![Made with TypeScript](https://img.shields.io/badge/Made%20with-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -31,7 +30,8 @@
 
 [![License: Source Available](https://img.shields.io/badge/License-Source%20Available-orange?style=for-the-badge)](./LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com)
-
+[![GitHub Stars](https://img.shields.io/github/stars/isnotcursed/polymarket-casino-slot?style=for-the-badge)](https://github.com/isnotcursed/polymarket-casino-slot/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/isnotcursed/polymarket-casino-slot?style=for-the-badge)](https://github.com/isnotcursed/polymarket-casino-slot/network/members)
 <p align="center">
   <strong>A deliciously addictive slot machine that connects to real Polymarket predictions!</strong>
   <br />
@@ -121,7 +121,7 @@ curl -fsSL https://bun.sh/install | bash
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/polynanza-crush.git
+git clone https://github.com/isnotcursed/polymarket-casino-slot.git
 cd polynanza-crush
 
 # 2. Install dependencies
@@ -158,19 +158,6 @@ Contributions are what make the open source community amazing! 🎉
 
 This project is licensed under a **Source-Available (Non-Commercial) License** - see the [LICENSE.md](LICENSE.md) file for details.
 
-### TL;DR:
-
-✅ **You CAN**:
-- View and study the code
-- Use for personal/educational purposes
-- Modify for personal projects
-
-❌ **You CANNOT**:
-- Use commercially
-- Redistribute or sell
-- Deploy publicly for profit
-
-
 ---
 
 
@@ -178,11 +165,28 @@ This project is licensed under a **Source-Available (Non-Commercial) License** -
 
 ### 📬 Questions? Issues?
 
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/polynanza-crush?style=for-the-badge)](https://github.com/yourusername/polynanza-crush/issues)
-[![GitHub Discussions](https://img.shields.io/github/discussions/yourusername/polynanza-crush?style=for-the-badge)](https://github.com/yourusername/polynanza-crush/discussions)
+[![GitHub Issues](https://img.shields.io/github/issues/isnotcursed/polymarket-casino-slot?style=for-the-badge)](https://github.com/isnotcursed/polymarket-casino-slot/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/isnotcursed/polymarket-casino-slot?style=for-the-badge)](https://github.com/isnotcursed/polymarket-casino-slot/discussions)
 
 **Made with ❤️ and 🍭 | 2026**
 
 [⬆ Back to Top](#polynanza-)
 
 </div>
+
+<!-- ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ -->
+<!-- ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇ -->
+<!-- ⡆⣿⣿⣦⠹⣳⣳⣕⢅⠈⢗⢕⢕⢕⢕⢕⢈⢆⠟⠋⠉⠁⠉⠉⠁⠈⠼⢐⢕⢽ -->
+<!-- ⡗⢰⣶⣶⣦⣝⢝⢕⢕⠅⡆⢕⢕⢕⢕⢕⣴⠏⣠⡶⠛⡉⡉⡛⢶⣦⡀⠐⣕⢕ -->
+<!-- ⡝⡄⢻⢟⣿⣿⣷⣕⣕⣅⣿⣔⣕⣵⣵⣿⣿⢠⣿⢠⣮⡈⣌⠨⠅⠹⣷⡀⢱⢕ -->
+<!-- ⡝⡵⠟⠈⢀⣀⣀⡀⠉⢿⣿⣿⣿⣿⣿⣿⣿⣼⣿⢈⡋⠴⢿⡟⣡⡇⣿⡇⡀⢕ -->
+<!-- ⡝⠁⣠⣾⠟⡉⡉⡉⠻⣦⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣦⣥⣿⡇⡿⣰⢗⢄ -->
+<!-- ⠁⢰⣿⡏⣴⣌⠈⣌⠡⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣬⣉⣉⣁⣄⢖⢕⢕⢕ -->
+<!-- ⡀⢻⣿⡇⢙⠁⠴⢿⡟⣡⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣵⣵⣿ -->
+<!-- ⡻⣄⣻⣿⣌⠘⢿⣷⣥⣿⠇⣿⣿⣿⣿⣿⣿⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ -->
+<!-- ⣷⢄⠻⣿⣟⠿⠦⠍⠉⣡⣾⣿⣿⣿⣿⣿⣿⢸⣿⣦⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟ -->
+<!-- ⡕⡑⣑⣈⣻⢗⢟⢞⢝⣻⣿⣿⣿⣿⣿⣿⣿⠸⣿⠿⠃⣿⣿⣿⣿⣿⣿⡿⠁⣠ -->
+<!-- ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙ -->
+<!-- ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ -->
+
+<!-- Looking for secrets? Wrong place. Probably. -->
