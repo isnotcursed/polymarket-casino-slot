@@ -1,0 +1,59 @@
+# Node & Bun
+node_modules/
+.env
+.env.*
+bun.lockb
+bun.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-error.log*
+bun-debug.log*
+
+# Runtime
+.DS_Store
+*.tmp
+tmp/
+temp/
+
+# Build
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+.cache
+
+# Bun cache
+.bun/
+.bunfig.toml
+bunfig.toml
+
+# OS
+Thumbs.db
+ehthumbs.db
+
+# Editor / IDE
+.idea/
+.idea/**
+.run
+.run/**
+
+# Env overrides
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Project folders
+data/
+data/**
+docs
+docs/**

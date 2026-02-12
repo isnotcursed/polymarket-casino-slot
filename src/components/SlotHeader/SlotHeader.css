@@ -1,0 +1,200 @@
+/**
+ * @license Source-Available (Non-Commercial) - See LICENSE.md
+ */
+
+.slot-header {
+  display: grid;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(218, 112, 214, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(135, 206, 235, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #1a0e2e 0%, #2d1b3d 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 1255px;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.slot-header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.slot-header-grid > * {
+  height: 90px;
+}
+
+.slot-header-market {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(0, 93, 192, 0.12), rgba(191, 19, 166, 0.18));
+  min-height: 90px;
+  height: 100%;
+  justify-content: center;
+}
+
+.market-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: nowrap;
+}
+
+.market-line {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.market-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.market-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--candy-yellow);
+}
+
+.market-target {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.market-text {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.market-id .market-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slot-header-status {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.slot-header-status .status-message {
+  height: 100%;
+  min-height: 90px;
+}
+
+.connection-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 0.25rem;
+  padding: 0.6rem 0.85rem;
+  min-height: 90px;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0, 93, 192, 0.2), transparent 55%),
+    radial-gradient(circle at 90% 80%, rgba(254, 189, 69, 0.2), transparent 55%),
+    rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.connection-card.demo {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(254, 189, 69, 0.2), transparent 60%),
+    radial-gradient(circle at 88% 82%, rgba(191, 19, 166, 0.2), transparent 60%),
+    rgba(0, 0, 0, 0.28);
+}
+
+.connection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.connection-chip {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.connection-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+.connection-dot.live {
+  background: rgba(126, 214, 200, 0.9);
+  box-shadow: 0 0 12px rgba(126, 214, 200, 0.6);
+}
+
+.connection-dot.demo {
+  background: rgba(254, 189, 69, 0.9);
+  box-shadow: 0 0 12px rgba(254, 189, 69, 0.55);
+}
+
+.connection-status {
+  font-size: 0.74rem;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.72);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.connection-balance {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.balance-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.balance-value {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.balance-value.blurred {
+  filter: blur(5px);
+  opacity: 0.45;
+}

@@ -1,0 +1,439 @@
+/**
+ * @license Source-Available (Non-Commercial) - See LICENSE.md
+ */
+
+.bet-history {
+  width: 1255px;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(218, 112, 214, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(135, 206, 235, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #1a0e2e 0%, #2d1b3d 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1.2rem;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.history-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+}
+
+.history-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.history-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.history-stats {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+.history-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem 0.75rem;
+  min-width: 90px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stat-pill.demo {
+  background: rgba(0, 93, 192, 0.2);
+  border: 1px solid rgba(0, 93, 192, 0.5);
+  color: #cfe4ff;
+}
+
+.stat-pill.live {
+  background: rgba(254, 189, 69, 0.2);
+  border: 1px solid rgba(254, 189, 69, 0.45);
+  color: #ffe4a3;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.75fr;
+  gap: 1rem;
+}
+
+.history-panel {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 300px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.panel-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.panel-meta {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.bet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bet-list-header {
+  display: grid;
+  grid-template-columns: 110px 90px 120px 110px 1fr 80px;
+  gap: 0.4rem;
+  padding: 0 0.4rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bet-list-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.bet-list-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bet-list-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.bet-list-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.bet-row {
+  display: grid;
+  grid-template-columns: 110px 90px 120px 110px 1fr 80px;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.55rem 0.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.bet-row:hover {
+  border-color: rgba(254, 189, 69, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bet-cell {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.bet-amount {
+  font-weight: 700;
+}
+
+.bet-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+}
+
+.price-main {
+  font-weight: 600;
+}
+
+.price-sub {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dir-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dir-pill.up {
+  background: rgba(126, 214, 200, 0.18);
+  border: 1px solid rgba(126, 214, 200, 0.45);
+  color: #c7fff1;
+}
+
+.dir-pill.down {
+  background: rgba(255, 155, 155, 0.18);
+  border: 1px solid rgba(255, 155, 155, 0.45);
+  color: #ffd0d0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.status-won .status-pill {
+  background: rgba(126, 214, 200, 0.2);
+  border-color: rgba(126, 214, 200, 0.45);
+  color: #c7fff1;
+}
+
+.status-lost .status-pill {
+  background: rgba(255, 155, 155, 0.2);
+  border-color: rgba(255, 155, 155, 0.45);
+  color: #ffd0d0;
+}
+
+.status-active .status-pill,
+.status-pending .status-pill,
+.status-resolving .status-pill {
+  background: rgba(254, 189, 69, 0.18);
+  border-color: rgba(254, 189, 69, 0.4);
+  color: #ffe4a3;
+}
+
+.status-cancelled .status-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.payout {
+  font-weight: 700;
+}
+
+.payout.positive {
+  color: var(--candy-green);
+}
+
+.payout.negative {
+  color: #ffb3b3;
+}
+
+.payout.muted {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mode-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mode-pill.demo {
+  background: rgba(0, 93, 192, 0.2);
+  border: 1px solid rgba(0, 93, 192, 0.45);
+  color: #cfe4ff;
+}
+
+.mode-pill.live {
+  background: rgba(254, 189, 69, 0.2);
+  border: 1px solid rgba(254, 189, 69, 0.45);
+  color: #ffe4a3;
+}
+
+.history-empty {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  padding: 1.2rem 0.5rem;
+  text-align: center;
+}
+
+.history-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.history-pagination button {
+  padding: 0.4rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 93, 192, 0.18);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-pagination button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--candy-yellow);
+}
+
+.history-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+}
+
+.balance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.balance-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.balance-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.balance-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.balance-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.balance-delta {
+  min-width: 72px;
+  font-weight: 700;
+}
+
+.balance-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+
+.balance-value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.balance-reason {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.balance-time {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+.balance-up .balance-delta {
+  color: var(--candy-green);
+}
+
+.balance-down .balance-delta {
+  color: #ff9b9b;
+}

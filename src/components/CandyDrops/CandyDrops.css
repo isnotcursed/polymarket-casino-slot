@@ -1,0 +1,32 @@
+/**
+ * @license Source-Available (Non-Commercial) - See LICENSE.md
+ */
+
+.candy-drops {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.candy-drop-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.candy-drop-zone.left {
+  left: 0;
+}
+
+.candy-drop-zone.right {
+  right: 0;
+}
+
+.candy-drop {
+  position: absolute;
+  top: 0;
+  will-change: transform;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.35));
+}

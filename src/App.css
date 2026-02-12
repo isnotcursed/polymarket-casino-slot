@@ -1,0 +1,190 @@
+/**
+ * @license Source-Available (Non-Commercial) - See LICENSE.md
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+  --candy-pink: #BF13A6;
+  --candy-purple: #CFA7D7;
+  --candy-blue: #005DC0;
+  --candy-yellow: #FEBD45;
+  --candy-orange: #FDC29A;
+  --candy-green: #7ED6C8;
+
+  --cursor-default: url("./public/cursor/default.png") 4 4, auto;
+  --cursor-pointer: url("./public/cursor/pointer.png") 4 4, pointer;
+
+  --gradient-main: linear-gradient(135deg, #BF13A6 0%, #CFA7D7 45%, #FEBD45 100%);
+  --gradient-gold: linear-gradient(135deg, #FEBD45 0%, #FDC29A 100%);
+  --gradient-win: linear-gradient(135deg, #7ED6C8 0%, #46C38A 100%);
+
+  --shadow-soft: 0 8px 24px rgba(0, 93, 192, 0.25);
+  --shadow-hard: 0 16px 50px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 30px rgba(191, 19, 166, 0.35);
+
+  --font-display: 'Fredoka', sans-serif;
+  --font-ui: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+body {
+  font-family: var(--font-ui);
+  overflow-x: hidden;
+  background:
+          radial-gradient(circle at 15% 20%, rgba(0, 93, 192, 0.28), transparent 36%),
+          radial-gradient(circle at 82% 12%, rgba(229, 205, 247, 0.28), transparent 40%),
+          radial-gradient(circle at 30% 80%, rgba(253, 194, 154, 0.28), transparent 42%),
+          radial-gradient(circle at 80% 72%, rgba(254, 185, 241, 0.26), transparent 38%),
+          #0b1536;
+  min-width: 1550px;
+  cursor: var(--cursor-default);
+}
+
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+label {
+  cursor: var(--cursor-pointer) !important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+  cursor: var(--cursor-pointer);
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed !important;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.candy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+
+}
+.candy-bg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.candy-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+          radial-gradient(circle at 10% 20%, rgba(0, 93, 192, 0.25), transparent 40%),
+          radial-gradient(circle at 80% 25%, rgba(229, 205, 247, 0.22), transparent 42%),
+          radial-gradient(circle at 25% 75%, rgba(253, 194, 154, 0.22), transparent 40%),
+          radial-gradient(circle at 85% 70%, rgba(254, 185, 241, 0.25), transparent 36%);
+  mix-blend-mode: screen;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  max-width: 1550px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.settings-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+          radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(218, 112, 214, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 40% 20%, rgba(135, 206, 235, 0.2) 0%, transparent 50%),
+          linear-gradient(135deg, #1a0e2e 0%, #2d1b3d 100%);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.settings-fab.active {
+  box-shadow:
+          0 18px 36px rgba(0, 0, 0, 0.45),
+          0 0 20px rgba(254, 189, 69, 0.25);
+}
+
+.settings-fab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.slot-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.app-footer {
+  padding: 2rem;
+  text-align: center;
+  background: rgba(26, 14, 46, 0.9);
+  border-top: 2px solid var(--candy-purple);
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 0.5rem 0;
+}
+
+.footer-meme {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--candy-yellow);
+  font-weight: 600;
+}
