@@ -1,12 +1,8 @@
 > ## ⚠️ IMPORTANT DISCLAIMER
+>
+> **PLEASE USE DEMO MODE ONLY! DO NOT connect real API keys or trade with real money.**
 > 
-> **This project was created purely for fun and educational purposes!**
-> 
-> This is NOT a trading platform. This is NOT financial advice. Please DO NOT attempt to trade or gamble through this application. It's a demonstration of how prediction market APIs can be gamified into an entertaining slot machine experience.
-> 
-> **⚠️ PLEASE USE DEMO MODE ONLY! DO NOT connect real API keys or trade with real money.**
-> 
-> **Use at your own risk. Entertainment only.** 🎰
+> **Use at your own risk.**
 
 
 
@@ -54,8 +50,39 @@
 <!-- MAIN SCREENSHOT -->
 <img src="./assets/preview_main.png" alt="Polynanza Crush Game Screenshot" width="800"/>
 
+---
 
+## 🚀 Quick Start
 
+### Prerequisites
+
+Make sure you have **Bun** installed:
+
+```bash
+# Install Bun (if not already installed)
+curl -fsSL https://bun.sh/install | bash
+```
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/isnotcursed/polymarket-casino-slot.git
+cd polynanza-crush
+
+# 2. Install dependencies
+bun install
+
+# 3. Start the development server
+bun run dev
+
+------------  OR ------------
+
+./start.sh  # Linux
+
+start.bat   # Windows
+```
+The app will be available at `http://localhost:3000` 🎉
 
 ---
 
@@ -137,41 +164,6 @@ sequenceDiagram
     GameOrchestrator-->>App: onComplete(spinResult)
     App->>User: Display animation & result
 ```
-
----
-
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-Make sure you have **Bun** installed:
-
-```bash
-# Install Bun (if not already installed)
-curl -fsSL https://bun.sh/install | bash
-```
-
-### Installation
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/isnotcursed/polymarket-casino-slot.git
-cd polynanza-crush
-
-# 2. Install dependencies
-bun install
-
-# 3. Start the development server
-bun run dev
-
-------------  OR ------------
-
-./start.sh  # Linux
-
-start.bat   # Windows
-```
-The app will be available at `http://localhost:3000` 🎉
 
 ---
 
